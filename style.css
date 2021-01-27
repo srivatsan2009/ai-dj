@@ -1,0 +1,44 @@
+.heading {
+box-shadow: 5px 5px 5px 50px red;
+font-size: 13px;
+margin-top:0px;
+width:80%;
+background-color: black;
+color: aqua;
+}
+
+.div_speed{
+float:left;
+margin-top: 100px;
+margin-left:100px;
+animation: example 1s infinite;
+color: yellow;
+}
+
+@keyframes example{
+0% {background-color: green;}
+25%{background-color: red;}
+50% {background-color: goldenrod;}
+100% {background-color:navy;}
+}
+.div_speed img,.div_vol img {
+width:100px;
+}
+
+.div_vol {
+float: right;
+margin-right: 100px;
+margin-top: 50px;
+animation: example 1s infinite;
+color: yellow;
+}
+
+#play_button,#stop_button {
+font-size:19; 
+margin-top: 100px;
+}
+
+canvas {
+border:darkorange;
+box-shadow: 5px 5px 60px red;
+}
