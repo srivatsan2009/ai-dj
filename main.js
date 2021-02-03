@@ -2,6 +2,7 @@ rightwristx="";
 rightwristy="";
 leftwristx="";
 leftwristy="";
+leftWrist_score="";
 song="";
 function preload(){
 song=loadSound("music.mp3");
@@ -16,9 +17,6 @@ posenet=ml5.poseNet(video,modeloaded);
 posenet.on('pose',getposes);
 }
 
-function draw() {
-image(video,0,0,400,300);
-}
 
 function play() {
 song.play();
@@ -43,5 +41,23 @@ console.log(rightwristx,rightwristy);
 leftwristx=results[0].pose.leftWrist.x;
 leftwristy=results[0].pose.leftWrist.y;
 console.log(leftwristx,leftwristy);
+leftWrist_score=results[0].pose.keypoints[9].score;
+console.log(leftWrist_score);
 }
 }
+
+function draw() {
+image(video,0,0,400,300);
+fill("red");
+stroke("yellowgreen");
+if(leftWrist_score>0.2){
+circle(leftwristx,leftwristy,50);
+leftwristyin_number=Number(leftwristy);
+round=floor(leftwristyin_number);
+volume=round/600;
+song.setVolume(volume);
+document.getElementById("vol_value").innerHTML="volume:"+volume;
+}
+
+
+}    
