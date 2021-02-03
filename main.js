@@ -54,7 +54,7 @@ if(leftWrist_score>0.2){
 circle(leftwristx,leftwristy,50);
 leftwristyin_number=Number(leftwristy);
 round=floor(leftwristyin_number);
-volume=floor(round/600);
+volume=(round/600).toFixed(2);
 song.setVolume(volume);
 document.getElementById("vol_value").innerHTML="volume:"+volume;
 }
